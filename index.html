@@ -32,14 +32,6 @@
             }
         });
     </script>
-    <script>
-        AFRAME.registerComponent('clickhandler', {
-            init: function() {
-                document.querySelector("#linkText").addEventListener('click', () => {
-                    window.location.href = "www.digi.ba";
-                });
-        }});
-    </script>
     <body style="margin: 8px; overflow: hidden;">    
         <a-scene renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" arjs='sourceType: webcam; debugUIEnabled: false; patternRatio: 0.5; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;'>
             <a-assets>
@@ -49,18 +41,15 @@
                 </video>
             </a-assets>
       
-            <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       
-            <a-marker id="memarker" type="pattern" url="marker.patt" vidhandler clickhandler>
+            <a-marker id="memarker" type="pattern" url="marker.patt" vidhandler>
                 <a-entity id="vidId"> 
-                    <a-plane position='0 0 -1' scale="7 2 1" rotation="-30 0 0" material='transparent:true;src:#vid' controls></a-plane>
+                    <a-plane position='0 0 -2' scale="21 6 3" rotation="-30 0 0" material='transparent:true;src:#vid' controls></a-plane>
                 </a-entity>
                 <a-entity id="linkText" visible="false">
-                    <a-text value="www.digi.ba" position='-0.6 0.6 -1' rotation="-30 0 0" scale="1.0 1.0 1.0" color="yellow" font="https://cdn.aframe.io/fonts/DejaVu-sdf.fnt"></a-text>
+                    <a-text value="www.digi.ba" position='-1.5 1.0 -1' rotation="-30 0 0" scale="2.0 2.0 2.0" color="yellow" font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"></a-text>
                 </a-entity>
-               <!-- <a-entity id="linkText" visible="false">
-                    <a-text value="www.digi.ba" position='-1 1 -1' rotation="-30 0 0" scale="0.5 0.5 0.5" color="black" ></a-text>
-                </a-entity>-->
             </a-marker>
         </a-scene>
     </body>
